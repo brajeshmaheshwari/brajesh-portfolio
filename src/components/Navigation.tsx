@@ -18,7 +18,7 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">B</span>
             </div>
-            <span className="font-semibold text-lg">Brajesh</span>
+            <span className="font-semibold text-lg">Brajesh Patwari</span>
           </div>
 
           {/* Navigation Links */}
