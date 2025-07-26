@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navigation = () => {
   const scrollToSection = (sectionId: string) => {
@@ -48,13 +49,16 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Contact Button */}
-          <Button 
-            onClick={() => scrollToSection('contact')}
-            className="rounded-full px-6"
-          >
-            Contact me
-          </Button>
+          {/* Theme Toggle and Contact Button */}
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button 
+              onClick={() => scrollToSection('contact')}
+              className="rounded-full px-6"
+            >
+              Contact me
+            </Button>
+          </div>
         </div>
       </div>
     </nav>
