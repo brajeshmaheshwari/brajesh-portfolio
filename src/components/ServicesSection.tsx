@@ -27,6 +27,18 @@ const ServicesSection = () => {
       description: "OpenAI API integrations and GPT-based features to create intelligent, AI-powered web applications.",
       features: ["OpenAI API Integration", "GPT-based Features", "AI-Powered Solutions", "Intelligent Automation"],
     },
+    {
+      icon: Smartphone,
+      title: "Custom Web Applications",
+      description: "Tailored web solutions designed to meet specific business requirements and user needs.",
+      features: ["Custom Solutions", "User Experience", "Performance", "Scalability"],
+    },
+    {
+      icon: Cloud,
+      title: "Modern Web Design",
+      description: "Contemporary web design using React, Next.js, and modern CSS frameworks for optimal user experience.",
+      features: ["React/Next.js", "Responsive Design", "Modern UI/UX", "Performance"],
+    },
   ];
 
   return (

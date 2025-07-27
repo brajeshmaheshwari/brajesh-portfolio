@@ -22,22 +22,23 @@ const EducationSection = () => {
             My academic journey and qualifications that built the foundation for my career.
           </p>
 
-          {/* Education Card */}
-          <div className="max-w-2xl mx-auto">
-            <Card className="p-8 text-left relative overflow-hidden">
+          {/* Education Cards */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* College Education */}
+            <Card className="p-8 text-left relative overflow-hidden hover:shadow-lg transition-all duration-300 group">
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:bg-primary/10 transition-colors"></div>
               
               <CardHeader className="pb-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                     <GraduationCap className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-2xl font-bold mb-2">
+                    <CardTitle className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                       B.Tech. in Information Technology
                     </CardTitle>
-                    <p className="text-lg text-muted-foreground mb-1">
+                    <p className="text-base text-muted-foreground mb-1">
                       Poornima College of Engineering, Jaipur
                     </p>
                     <p className="text-sm text-muted-foreground">
@@ -48,16 +49,42 @@ const EducationSection = () => {
               </CardHeader>
               
               <CardContent className="pt-0">
-                <div className="mb-6">
-                  <div className="inline-flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
-                    <span className="text-sm font-medium text-primary">CGPA: 7.73</span>
+                <div className="inline-flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-primary">CGPA: 7.73</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* School Education */}
+            <Card className="p-8 text-left relative overflow-hidden hover:shadow-lg transition-all duration-300 group">
+              {/* Background decoration */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:bg-primary/10 transition-colors"></div>
+              
+              <CardHeader className="pb-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                      Senior Secondary Education
+                    </CardTitle>
+                    <p className="text-base text-muted-foreground mb-1">
+                      Kendriya Vidyalaya, Bhilwara
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      2020
+                    </p>
                   </div>
                 </div>
-                
-                <Button className="w-full sm:w-auto">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Resume (PDF)
-                </Button>
+              </CardHeader>
+              
+              <CardContent className="pt-0">
+                <div className="inline-flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full">
+                  <span className="text-sm font-medium text-primary">Science Stream</span>
+                </div>
               </CardContent>
             </Card>
           </div>

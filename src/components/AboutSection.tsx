@@ -22,34 +22,34 @@ const AboutSection = () => {
             With a strong foundation in backend optimization and AI-integrated solutions, I thrive on delivering products that solve real-world problems efficiently and elegantly.
           </p>
 
-          {/* About Cards */}
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 text-left">
-              <h3 className="text-2xl font-bold mb-4">My Journey</h3>
-              <p className="text-muted-foreground mb-6">
-                With over 3 years of experience in software development, I've worked on 
-                various projects ranging from web applications to enterprise solutions. 
-                My journey started with Java and has evolved to include modern frontend 
-                and backend technologies.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Full Stack</Badge>
-                <Badge variant="secondary">Problem Solver</Badge>
-                <Badge variant="secondary">Team Player</Badge>
-              </div>
-            </Card>
-
-            <Card className="p-8 text-left">
-              <h3 className="text-2xl font-bold mb-4">What I Do</h3>
-              <p className="text-muted-foreground mb-6">
-                I specialize in building responsive web applications using React, Spring Boot, 
-                and modern development practices. I'm passionate about clean code, 
-                user experience, and continuous learning.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">Web Development</Badge>
-                <Badge variant="secondary">API Design</Badge>
-                <Badge variant="secondary">Database Design</Badge>
+          {/* About Card */}
+          <div className="max-w-3xl mx-auto">
+            <Card className="p-8 text-left hover:shadow-lg transition-all duration-300 group">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">My Journey</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Hello, I am Brajesh Patwari, a full stack developer and software developer. I'm passionate about building scalable web applications and working with modern technologies like React, Spring Boot, and Node.js.
+                  </p>
+                  <br />
+                  <p className="text-muted-foreground leading-relaxed">
+                    With expertise in both frontend and backend development, I enjoy creating comprehensive solutions that deliver exceptional user experiences while maintaining robust, efficient backend systems.
+                  </p>
+                </div>
+                
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                  <span>Bhilwara, Rajasthan</span>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Full Stack Developer</Badge>
+                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Problem Solver</Badge>
+                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Team Player</Badge>
+                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Innovation</Badge>
+                </div>
               </div>
             </Card>
           </div>
