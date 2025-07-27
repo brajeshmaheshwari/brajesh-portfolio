@@ -7,18 +7,23 @@ const ExperienceSection = () => {
     {
       title: "Full Stack Developer",
       company: "Hornet Dynamics Pvt. Ltd.",
-      location: "Remote",
+      location: "Jaipur, Rajasthan",
       duration: "Mar 2024 – Dec 2024",
-      description: "Delivered 4–5 full stack applications from end to end. Improved backend efficiency with optimized DB queries and caching strategies.",
-      technologies: ["React.js", "Node.js", "MySQL", "Express.js", "REST APIs"],
+      description: "Led end-to-end development of 4–5 full stack applications, ensuring on-time delivery and seamless integration with client goals.",
+      details: [
+        "Developed and maintained end-to-end web applications using JavaScript, React.js, Node.js, and MySQL.",
+        "Improved backend performance by optimizing database queries and implementing caching strategies."
+      ]
     },
     {
-      title: "Full Stack Developer",
+      title: "Full Stack Developer", 
       company: "Xpertzy",
       location: "Remote",
       duration: "Apr 2023 – Sep 2023",
-      description: "Led 3-member team, launched 3 products in 2 months. Fixed 80+ major bugs, improving uptime by 40%. Remote-first role with self-driven problem solving.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "Git"],
+      description: "Led a dynamic 3-member team to deliver three innovative web products in just two months.",
+      details: [
+        "Expertly resolved more than 80 critical issues, increasing system reliability by 40% and reducing downtime."
+      ]
     },
   ];
 
@@ -72,13 +77,16 @@ const ExperienceSection = () => {
                     </div>
                   </div>
                   
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-4 leading-relaxed font-medium">
                     {exp.description}
                   </p>
                   
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary">{tech}</Badge>
+                  <div className="space-y-2 mb-4">
+                    {exp.details.map((detail, detailIndex) => (
+                      <div key={detailIndex} className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">{detail}</p>
+                      </div>
                     ))}
                   </div>
                 </div>

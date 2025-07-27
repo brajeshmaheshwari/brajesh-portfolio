@@ -25,9 +25,10 @@ const EducationSection = () => {
           {/* Education Cards */}
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* College Education */}
-            <Card className="p-8 text-left relative overflow-hidden hover:shadow-lg transition-all duration-300 group">
+            <Card className="p-8 text-left relative overflow-hidden hover:shadow-xl transition-all duration-500 group animate-fade-in hover:scale-105">
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:bg-primary/10 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-150"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full translate-y-12 -translate-x-12 group-hover:bg-secondary/15 transition-all duration-500 group-hover:scale-125"></div>
               
               <CardHeader className="pb-6">
                 <div className="flex items-start gap-4">
@@ -56,9 +57,10 @@ const EducationSection = () => {
             </Card>
 
             {/* School Education */}
-            <Card className="p-8 text-left relative overflow-hidden hover:shadow-lg transition-all duration-300 group">
+            <Card className="p-8 text-left relative overflow-hidden hover:shadow-xl transition-all duration-500 group animate-fade-in hover:scale-105" style={{animationDelay: '0.2s'}}>
               {/* Background decoration */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:bg-primary/10 transition-colors"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:bg-primary/20 transition-all duration-500 group-hover:scale-150"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-secondary/5 rounded-full translate-y-12 -translate-x-12 group-hover:bg-secondary/15 transition-all duration-500 group-hover:scale-125"></div>
               
               <CardHeader className="pb-6">
                 <div className="flex items-start gap-4">

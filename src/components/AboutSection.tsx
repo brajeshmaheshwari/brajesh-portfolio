@@ -23,32 +23,31 @@ const AboutSection = () => {
           </p>
 
           {/* About Card */}
-          <div className="max-w-3xl mx-auto">
-            <Card className="p-8 text-left hover:shadow-lg transition-all duration-300 group">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">My Journey</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Hello, I am Brajesh Patwari, a full stack developer and software developer. I'm passionate about building scalable web applications and working with modern technologies like React, Spring Boot, and Node.js.
-                  </p>
-                  <br />
-                  <p className="text-muted-foreground leading-relaxed">
-                    With expertise in both frontend and backend development, I enjoy creating comprehensive solutions that deliver exceptional user experiences while maintaining robust, efficient backend systems.
-                  </p>
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-8 text-left hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+              {/* Background gradient effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="relative z-10 space-y-8">
+                <div className="space-y-6">
+                  <h3 className="text-3xl font-bold mb-6 group-hover:text-primary transition-colors duration-300 animate-fade-in">My Journey</h3>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground leading-relaxed text-lg animate-fade-in" style={{animationDelay: '0.1s'}}>
+                      Hello, I am Brajesh Patwari, a full stack developer and software developer. I'm passionate about building scalable web applications and working with modern technologies like React, Spring Boot, and Node.js.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed text-lg animate-fade-in" style={{animationDelay: '0.2s'}}>
+                      With expertise in both frontend and backend development, I enjoy creating comprehensive solutions that deliver exceptional user experiences while maintaining robust, efficient backend systems.
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                  </svg>
-                  <span>Bhilwara, Rajasthan</span>
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Full Stack Developer</Badge>
-                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Problem Solver</Badge>
-                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Team Player</Badge>
-                  <Badge variant="secondary" className="hover:scale-105 transition-transform">Innovation</Badge>
+                <div className="flex justify-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+                  <div className="inline-flex items-center gap-3 bg-primary/10 px-6 py-3 rounded-xl border border-primary/20 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span className="text-primary font-semibold">Bhilwara, Rajasthan</span>
+                  </div>
                 </div>
               </div>
             </Card>
