@@ -18,8 +18,8 @@ const AboutSection = () => {
           </h2>
 
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            I'm a passionate Full Stack Developer with expertise in modern web technologies. 
-            I love creating scalable, efficient solutions that solve real-world problems.
+            I'm a passionate Full Stack Developer specializing in building scalable web applications using Java, Spring Boot, React, and Node.js. 
+            With a strong foundation in backend optimization and AI-integrated solutions, I thrive on delivering products that solve real-world problems efficiently and elegantly.
           </p>
 
           {/* About Cards */}
