@@ -46,52 +46,57 @@ const ProjectsSection = () => {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
-                {/* Project Image */}
-                <div className="aspect-video bg-muted/50 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+              <Card key={index} className="overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:scale-[1.05] animate-fade-in backdrop-blur-sm border-2 hover:border-primary/50 hover:rotate-1" style={{animationDelay: `${index * 300}ms`}}>
+                 {/* Project Image */}
+                 <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-500 relative overflow-hidden">
+                   <img 
+                     src={project.image} 
+                     alt={project.title}
+                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter group-hover:brightness-110"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                 </div>
                 
-                {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                 {/* Project Content */}
+                 <div className="p-8">
+                   <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-all duration-300 group-hover:scale-105">{project.title}</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {project.description}
                   </p>
                   
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
+                   {/* Technologies */}
+                   <div className="flex flex-wrap gap-3 mb-6">
+                     {project.technologies.map((tech, techIndex) => (
+                       <div 
+                         key={tech} 
+                         className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-xl text-sm font-medium text-primary hover:bg-primary/20 hover:scale-105 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md backdrop-blur-sm animate-fade-in"
+                         style={{animationDelay: `${techIndex * 100}ms`}}
+                       >
+                         {tech}
+                       </div>
+                     ))}
+                   </div>
                   
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <Button 
-                      variant="outline" 
-                      size="sm"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                      className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
-                    >
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                    <Button 
-                      size="sm"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                      className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </Button>
-                  </div>
+                   {/* Action Buttons */}
+                   <div className="flex gap-4">
+                     <Button 
+                       variant="outline" 
+                       size="lg"
+                       onClick={() => window.open(project.githubUrl, '_blank')}
+                       className="flex items-center gap-3 hover:scale-110 transition-all duration-300 hover:shadow-lg group/btn border-2 px-6 py-3"
+                     >
+                       <Github className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                       Code
+                     </Button>
+                     <Button 
+                       size="lg"
+                       onClick={() => window.open(project.liveUrl, '_blank')}
+                       className="flex items-center gap-3 hover:scale-110 transition-all duration-300 hover:shadow-lg group/btn px-6 py-3"
+                     >
+                       <ExternalLink className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                       Live Demo
+                     </Button>
+                   </div>
                 </div>
               </Card>
             ))}

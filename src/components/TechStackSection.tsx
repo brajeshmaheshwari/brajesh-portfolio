@@ -102,26 +102,28 @@ const TechStackSection = () => {
         </div>
 
         {/* Scrolling Animation Container */}
-        <div className="relative">
-          <div className="flex animate-scroll-left space-x-8">
+        <div className="relative overflow-hidden group">
+          <div className="flex animate-scroll-left space-x-8 group-hover:pause">
             {/* First set */}
             {techStack.map((tech, index) => (
               <div
                 key={`first-${index}`}
-                className={`flex-shrink-0 w-36 h-36 ${tech.bgColor} border border-border/50 rounded-2xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-xl group cursor-pointer hover:border-primary/50`}
+                className={`flex-shrink-0 w-40 h-40 ${tech.bgColor} border-2 border-border/50 rounded-3xl flex flex-col items-center justify-center shadow-xl hover:scale-125 transition-all duration-500 hover:shadow-2xl group/card cursor-pointer hover:border-primary/80 hover:rotate-3 animate-fade-in backdrop-blur-sm`}
+                style={{animationDelay: `${index * 100}ms`}}
               >
-                <div className="w-16 h-16 mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <div className="w-20 h-20 mb-4 group-hover/card:scale-125 group-hover/card:rotate-12 transition-all duration-500 flex items-center justify-center relative">
                   {tech.image ? (
                     <img 
                       src={tech.image} 
                       alt={tech.name}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain filter group-hover/card:brightness-110 transition-all duration-300"
                     />
                   ) : (
-                    <tech.icon className="w-12 h-12 text-primary" />
+                    <tech.icon className="w-14 h-14 text-primary group-hover/card:text-primary/80" />
                   )}
+                  <div className="absolute inset-0 bg-primary/5 rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
-                <span className="text-sm font-medium text-center group-hover:scale-105 transition-transform duration-300 text-foreground">
+                <span className="text-sm font-semibold text-center group-hover/card:scale-110 group-hover/card:text-primary transition-all duration-300 text-foreground px-2">
                   {tech.name}
                 </span>
               </div>
@@ -130,25 +132,31 @@ const TechStackSection = () => {
             {techStack.map((tech, index) => (
               <div
                 key={`second-${index}`}
-                className={`flex-shrink-0 w-36 h-36 ${tech.bgColor} border border-border/50 rounded-2xl flex flex-col items-center justify-center shadow-lg hover:scale-110 transition-all duration-300 hover:shadow-xl group cursor-pointer hover:border-primary/50`}
+                className={`flex-shrink-0 w-40 h-40 ${tech.bgColor} border-2 border-border/50 rounded-3xl flex flex-col items-center justify-center shadow-xl hover:scale-125 transition-all duration-500 hover:shadow-2xl group/card cursor-pointer hover:border-primary/80 hover:rotate-3 animate-fade-in backdrop-blur-sm`}
+                style={{animationDelay: `${index * 100}ms`}}
               >
-                <div className="w-16 h-16 mb-3 group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <div className="w-20 h-20 mb-4 group-hover/card:scale-125 group-hover/card:rotate-12 transition-all duration-500 flex items-center justify-center relative">
                   {tech.image ? (
                     <img 
                       src={tech.image} 
                       alt={tech.name}
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain filter group-hover/card:brightness-110 transition-all duration-300"
                     />
                   ) : (
-                    <tech.icon className="w-12 h-12 text-primary" />
+                    <tech.icon className="w-14 h-14 text-primary group-hover/card:text-primary/80" />
                   )}
+                  <div className="absolute inset-0 bg-primary/5 rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
-                <span className="text-sm font-medium text-center group-hover:scale-105 transition-transform duration-300 text-foreground">
+                <span className="text-sm font-semibold text-center group-hover/card:scale-110 group-hover/card:text-primary transition-all duration-300 text-foreground px-2">
                   {tech.name}
                 </span>
               </div>
             ))}
           </div>
+          
+          {/* Gradient overlays for better visual effect */}
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-muted/50 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-muted/50 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
 

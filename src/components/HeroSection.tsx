@@ -13,22 +13,22 @@ const HeroSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Hello Badge */}
-          <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 mb-8 animate-pulse hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-            <div className="w-2 h-2 bg-primary rounded-full animate-ping"></div>
-            <span className="text-primary font-medium animate-bounce">Hello !</span>
+          <div className="inline-flex items-center space-x-3 bg-primary/10 px-6 py-3 rounded-xl border border-primary/20 mb-12 animate-pulse hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm">
+            <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
+            <span className="text-primary font-semibold text-lg animate-bounce">Hello!</span>
           </div>
 
           {/* Main Heading */}
-          <div className="space-y-6 mb-8">
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              I'm <span className="text-primary">Brajesh Patwari</span>,
+          <div className="space-y-8 mb-12">
+            <h1 className="text-6xl lg:text-8xl font-bold leading-tight animate-fade-in">
+              I'm <span className="text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Brajesh Patwari</span>,
               <br />
               <span className="text-foreground">Full Stack Developer &</span>
               <br />
               <span className="text-foreground">Software Engineer</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: "200ms"}}>
               Passionate about building scalable web applications with expertise in React, Spring Boot, and modern technologies.
             </p>
           </div>
