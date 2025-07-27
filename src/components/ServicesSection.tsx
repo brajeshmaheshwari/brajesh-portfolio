@@ -5,39 +5,27 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Globe,
-      title: "Web Development",
-      description: "Full-stack web applications using modern frameworks like React, Spring Boot, and responsive design principles.",
-      features: ["Responsive Design", "Performance Optimization", "SEO Friendly", "Cross-browser Compatibility"],
+      title: "Full Stack Web Development",
+      description: "Complete web applications using Java + Spring Boot + React/Next.js stack for robust, scalable solutions.",
+      features: ["Java & Spring Boot", "React/Next.js", "End-to-End Development", "Scalable Architecture"],
     },
     {
       icon: Code,
-      title: "Frontend Development",
-      description: "Creating engaging user interfaces with React, TypeScript, and modern CSS frameworks for optimal user experience.",
-      features: ["React/Next.js", "TypeScript", "Tailwind CSS", "State Management"],
+      title: "Backend API Development",
+      description: "RESTful API design & integration with proper documentation, authentication, and security best practices.",
+      features: ["RESTful APIs", "Spring Boot", "API Documentation", "Authentication & Security"],
     },
     {
       icon: Database,
-      title: "Backend Development",
-      description: "Robust server-side solutions with Spring Boot, RESTful APIs, and database integration for scalable applications.",
-      features: ["REST APIs", "Spring Boot", "Database Design", "Authentication"],
-    },
-    {
-      icon: Smartphone,
-      title: "Responsive Design",
-      description: "Mobile-first approach ensuring your application works seamlessly across all devices and screen sizes.",
-      features: ["Mobile First", "Touch Friendly", "Fast Loading", "Adaptive Layouts"],
-    },
-    {
-      icon: Cloud,
-      title: "Cloud Integration",
-      description: "Deploying and managing applications on cloud platforms with scalability and reliability in mind.",
-      features: ["AWS/Azure", "Docker", "CI/CD", "Monitoring"],
+      title: "Database & Performance Optimization",
+      description: "MySQL indexing, caching strategies, and database optimization for improved application performance.",
+      features: ["MySQL Indexing", "Caching Strategies", "Query Optimization", "Performance Tuning"],
     },
     {
       icon: Settings,
-      title: "API Development",
-      description: "Designing and implementing RESTful APIs with proper documentation and security best practices.",
-      features: ["REST APIs", "API Documentation", "Security", "Testing"],
+      title: "AI-integrated Web Applications",
+      description: "OpenAI API integrations and GPT-based features to create intelligent, AI-powered web applications.",
+      features: ["OpenAI API Integration", "GPT-based Features", "AI-Powered Solutions", "Intelligent Automation"],
     },
   ];
 
@@ -66,10 +54,10 @@ const ServicesSection = () => {
             {services.map((service, index) => (
               <Card key={index} className="p-6 h-full hover:shadow-lg transition-shadow group">
                 <div className="mb-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                    <service.icon className="w-6 h-6 text-primary transition-transform duration-300" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>

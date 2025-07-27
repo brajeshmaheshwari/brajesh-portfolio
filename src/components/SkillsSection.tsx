@@ -3,17 +3,30 @@ import { Card } from "@/components/ui/card";
 
 const SkillsSection = () => {
   const skills = [
+    { name: "C++", level: 85, category: "Languages" },
+    { name: "Java", level: 92, category: "Languages" },
+    { name: "JavaScript", level: 88, category: "Languages" },
     { name: "React.js", level: 90, category: "Frontend" },
-    { name: "Spring Boot", level: 85, category: "Backend" },
-    { name: "JavaScript/TypeScript", level: 88, category: "Language" },
-    { name: "Java", level: 92, category: "Language" },
-    { name: "MySQL/PostgreSQL", level: 80, category: "Database" },
-    { name: "REST APIs", level: 87, category: "Backend" },
-    { name: "Tailwind CSS", level: 85, category: "Frontend" },
-    { name: "Git & GitHub", level: 88, category: "Tools" },
+    { name: "Next.js", level: 85, category: "Frontend" },
+    { name: "Tailwind CSS", level: 88, category: "Frontend" },
+    { name: "HTML5", level: 90, category: "Frontend" },
+    { name: "CSS3", level: 85, category: "Frontend" },
+    { name: "Spring Boot", level: 90, category: "Backend" },
+    { name: "Node.js", level: 85, category: "Backend" },
+    { name: "Express.js", level: 82, category: "Backend" },
+    { name: "MySQL", level: 85, category: "Database" },
+    { name: "MongoDB", level: 80, category: "Database" },
+    { name: "JWT", level: 85, category: "Tools" },
+    { name: "Git", level: 88, category: "Tools" },
+    { name: "JDBC", level: 80, category: "Tools" },
+    { name: "Postman", level: 85, category: "Tools" },
+    { name: "Mongoose", level: 78, category: "Tools" },
+    { name: "Leadership", level: 90, category: "Soft Skills" },
+    { name: "Innovation", level: 88, category: "Soft Skills" },
+    { name: "Fast Learner", level: 92, category: "Soft Skills" },
   ];
 
-  const categories = ["Frontend", "Backend", "Language", "Database", "Tools"];
+  const categories = ["Languages", "Frontend", "Backend", "Database", "Tools", "Soft Skills"];
 
   return (
     <section id="skills" className="py-20">
@@ -36,20 +49,20 @@ const SkillsSection = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid lg:grid-cols-2 gap-8">
-            {categories.map((category) => (
-              <Card key={category} className="p-6">
-                <h3 className="text-xl font-bold mb-6 text-center">{category}</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categories.map((category, index) => (
+              <Card key={category} className="p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] animate-fade-in group" style={{animationDelay: `${index * 100}ms`}}>
+                <h3 className="text-xl font-bold mb-6 text-center group-hover:text-primary transition-colors">{category}</h3>
                 <div className="space-y-6">
                   {skills
                     .filter((skill) => skill.category === category)
-                    .map((skill) => (
-                      <div key={skill.name} className="space-y-2">
+                    .map((skill, skillIndex) => (
+                      <div key={skill.name} className="space-y-2 group/skill">
                         <div className="flex justify-between items-center">
-                          <span className="font-medium">{skill.name}</span>
+                          <span className="font-medium group-hover/skill:text-primary transition-colors">{skill.name}</span>
                           <span className="text-sm text-muted-foreground">{skill.level}%</span>
                         </div>
-                        <Progress value={skill.level} className="h-2" />
+                        <Progress value={skill.level} className="h-2 transition-all duration-300 hover:h-3" />
                       </div>
                     ))}
                 </div>

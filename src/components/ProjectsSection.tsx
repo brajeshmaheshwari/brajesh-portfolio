@@ -6,35 +6,19 @@ import { ExternalLink, Github } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with user authentication, product management, shopping cart, and payment integration.",
-      technologies: ["React", "Spring Boot", "MySQL", "Stripe API", "AWS"],
-      githubUrl: "https://github.com/brajesh",
-      liveUrl: "https://example-ecommerce.com",
+      title: "Trackify",
+      description: "Expense Tracker with Auto-Categorized Transactions using regex patterns. Features real-time summaries with dynamic UI components for comprehensive financial management.",
+      technologies: ["Java", "Spring Boot", "MySQL", "JDBC", "REST APIs"],
+      githubUrl: "https://github.com/brajeshpatwari/trackify",
+      liveUrl: "https://trackify-demo.com",
       image: "/placeholder.svg",
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, team collaboration features, and project tracking.",
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "JWT"],
-      githubUrl: "https://github.com/brajesh",
-      liveUrl: "https://example-tasks.com",
-      image: "/placeholder.svg",
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard that displays current weather, forecasts, and weather maps with location-based services.",
-      technologies: ["React", "TypeScript", "Weather API", "Chart.js", "Tailwind"],
-      githubUrl: "https://github.com/brajesh",
-      liveUrl: "https://example-weather.com",
-      image: "/placeholder.svg",
-    },
-    {
-      title: "Blog Platform",
-      description: "A modern blog platform with content management, user authentication, commenting system, and SEO optimization.",
-      technologies: ["React", "Spring Boot", "PostgreSQL", "Redis", "Docker"],
-      githubUrl: "https://github.com/brajesh",
-      liveUrl: "https://example-blog.com",
+      title: "Prep-Mate",
+      description: "AI-Powered Interview Prep App that generates personalized interview questions using GPT. JWT-secured authentication with responsive UI via Tailwind CSS.",
+      technologies: ["React.js", "Node.js", "MongoDB", "OpenAI API", "JWT", "Tailwind CSS"],
+      githubUrl: "https://github.com/brajeshpatwari/prep-mate",
+      liveUrl: "https://prep-mate-demo.com",
       image: "/placeholder.svg",
     },
   ];
@@ -62,19 +46,19 @@ const ProjectsSection = () => {
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300 hover:scale-[1.02] animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
                 {/* Project Image */}
-                <div className="aspect-video bg-muted/50 flex items-center justify-center">
+                <div className="aspect-video bg-muted/50 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {project.description}
                   </p>
@@ -94,7 +78,7 @@ const ProjectsSection = () => {
                       variant="outline" 
                       size="sm"
                       onClick={() => window.open(project.githubUrl, '_blank')}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
                     >
                       <Github className="w-4 h-4" />
                       Code
@@ -102,7 +86,7 @@ const ProjectsSection = () => {
                     <Button 
                       size="sm"
                       onClick={() => window.open(project.liveUrl, '_blank')}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 hover:scale-105 transition-transform duration-300"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
