@@ -13,14 +13,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* Hello Badge */}
-          <div className="inline-flex items-center space-x-3 bg-primary/10 px-6 py-3 rounded-xl border border-primary/20 mb-12 animate-pulse hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm">
+          <div className="inline-flex items-center space-x-3 bg-primary/10 px-6 py-3 rounded-xl border border-primary/20 mb-12 backdrop-blur-sm">
             <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
-            <span className="text-primary font-semibold text-lg animate-bounce">Hello!</span>
+            <span className="text-primary font-semibold text-lg">Hello !</span>
           </div>
 
           {/* Main Heading */}
           <div className="space-y-8 mb-12">
-            <h1 className="text-6xl lg:text-8xl font-bold leading-tight animate-fade-in">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight animate-fade-in">
               I'm <span className="text-primary bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Brajesh Patwari</span>,
               <br />
               <span className="text-foreground">Full Stack Developer &</span>
@@ -34,13 +34,21 @@ const HeroSection = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex gap-6 justify-center">
+          <div className="flex gap-6 justify-center items-center">
             <Button 
               onClick={scrollToContact}
               size="lg" 
               className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Hire Me
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2"
+              onClick={() => window.open('/resume.pdf', '_blank')}
+            >
+              Resume
             </Button>
             <Button 
               variant="outline" 

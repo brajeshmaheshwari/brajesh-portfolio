@@ -89,77 +89,48 @@ const TechStackSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/50 overflow-hidden">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 mb-6">
-            <div className="w-2 h-2 bg-primary rounded-full animate-ping"></div>
-            <span className="text-primary font-medium">Tech Stack</span>
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 mb-8">
+              <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <span className="text-primary font-medium">Skills & Abilities</span>
+            </div>
+            
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Skills & <span className="text-primary">Abilities</span>
+            </h2>
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Technologies I <span className="text-primary">Work With</span>
-          </h2>
-        </div>
 
-        {/* Scrolling Animation Container */}
-        <div className="relative overflow-hidden group">
-          <div className="flex animate-scroll-left space-x-8 group-hover:pause">
-            {/* First set */}
+          {/* Skills Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {techStack.map((tech, index) => (
               <div
-                key={`first-${index}`}
-                className={`flex-shrink-0 w-40 h-40 ${tech.bgColor} border-2 border-border/50 rounded-3xl flex flex-col items-center justify-center shadow-xl hover:scale-125 transition-all duration-500 hover:shadow-2xl group/card cursor-pointer hover:border-primary/80 hover:rotate-3 animate-fade-in backdrop-blur-sm`}
+                key={index}
+                className="group bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-6 flex flex-col items-center justify-center hover:scale-105 hover:bg-primary/5 hover:border-primary/30 transition-all duration-300 cursor-pointer animate-fade-in"
                 style={{animationDelay: `${index * 100}ms`}}
               >
-                <div className="w-20 h-20 mb-4 group-hover/card:scale-125 group-hover/card:rotate-12 transition-all duration-500 flex items-center justify-center relative">
+                <div className="w-16 h-16 mb-4 flex items-center justify-center">
                   {tech.image ? (
                     <img 
                       src={tech.image} 
                       alt={tech.name}
-                      className="w-full h-full object-contain filter group-hover/card:brightness-110 transition-all duration-300"
+                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                     />
                   ) : (
-                    <tech.icon className="w-14 h-14 text-primary group-hover/card:text-primary/80" />
+                    <tech.icon className="w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300" />
                   )}
-                  <div className="absolute inset-0 bg-primary/5 rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
-                <span className="text-sm font-semibold text-center group-hover/card:scale-110 group-hover/card:text-primary transition-all duration-300 text-foreground px-2">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {techStack.map((tech, index) => (
-              <div
-                key={`second-${index}`}
-                className={`flex-shrink-0 w-40 h-40 ${tech.bgColor} border-2 border-border/50 rounded-3xl flex flex-col items-center justify-center shadow-xl hover:scale-125 transition-all duration-500 hover:shadow-2xl group/card cursor-pointer hover:border-primary/80 hover:rotate-3 animate-fade-in backdrop-blur-sm`}
-                style={{animationDelay: `${index * 100}ms`}}
-              >
-                <div className="w-20 h-20 mb-4 group-hover/card:scale-125 group-hover/card:rotate-12 transition-all duration-500 flex items-center justify-center relative">
-                  {tech.image ? (
-                    <img 
-                      src={tech.image} 
-                      alt={tech.name}
-                      className="w-full h-full object-contain filter group-hover/card:brightness-110 transition-all duration-300"
-                    />
-                  ) : (
-                    <tech.icon className="w-14 h-14 text-primary group-hover/card:text-primary/80" />
-                  )}
-                  <div className="absolute inset-0 bg-primary/5 rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 animate-pulse"></div>
-                </div>
-                <span className="text-sm font-semibold text-center group-hover/card:scale-110 group-hover/card:text-primary transition-all duration-300 text-foreground px-2">
+                <span className="text-sm font-medium text-center group-hover:text-primary transition-colors duration-300">
                   {tech.name}
                 </span>
               </div>
             ))}
           </div>
-          
-          {/* Gradient overlays for better visual effect */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-muted/50 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-muted/50 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
-
     </section>
   );
 };
