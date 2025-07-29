@@ -9,16 +9,25 @@ const HeroSection = () => {
   };
 
   const handleResumeClick = () => {
-    // Open in new tab
-    window.open('/Brajesh - Resume.pdf', '_blank');
+    const resumeUrl = '/Brajesh%20-%20Resume.pdf'; // URL encoded spaces
     
-    // Trigger download
-    const link = document.createElement('a');
-    link.href = '/Brajesh - Resume.pdf';
-    link.download = 'Brajesh - Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open in new tab
+    window.open(resumeUrl, '_blank');
+    
+    // Trigger download with fallback
+    try {
+      const link = document.createElement('a');
+      link.href = resumeUrl;
+      link.download = 'Brajesh-Resume.pdf'; // No spaces in download filename
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback: just open in new tab
+      window.open(resumeUrl, '_blank');
+    }
   };
 
   return (
