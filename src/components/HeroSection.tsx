@@ -8,25 +8,32 @@ const HeroSection = () => {
     }
   };
 
-  const handleResumeClick = () => {
-    const resumeUrl = '/Brajesh%20-%20Resume.pdf'; // URL encoded spaces
+  const handleResumeClick = async () => {
+    const resumePath = '/Brajesh - Resume.pdf';
     
-    // Open in new tab
-    window.open(resumeUrl, '_blank');
-    
-    // Trigger download with fallback
     try {
-      const link = document.createElement('a');
-      link.href = resumeUrl;
-      link.download = 'Brajesh-Resume.pdf'; // No spaces in download filename
-      link.target = '_blank';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Check if file exists first
+      const response = await fetch(resumePath, { method: 'HEAD' });
+      
+      if (response.ok) {
+        // File exists, proceed with download and open
+        window.open(resumePath, '_blank');
+        
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = resumePath;
+        link.download = 'Brajesh-Resume.pdf';
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        throw new Error('Resume file not found');
+      }
     } catch (error) {
-      console.error('Download failed:', error);
-      // Fallback: just open in new tab
-      window.open(resumeUrl, '_blank');
+      console.error('Resume access failed:', error);
+      // Fallback: Show error message to user
+      alert('Resume is currently unavailable. Please contact me directly for my resume.');
     }
   };
 
