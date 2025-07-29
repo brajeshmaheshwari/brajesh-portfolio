@@ -30,7 +30,8 @@ const EducationExperienceSection = () => {
       period: "Mar 2024 – Dec 2024",
       responsibilities: [
         "Delivered 4–5 full stack applications from end to end",
-        "Improved backend efficiency with optimized DB queries and caching"
+        "Improved backend efficiency with optimized DB queries and caching",
+        "Developed and maintained end-to-end web applications using JavaScript, React.js, Node.js, java, springboot and MySQL"
       ],
       type: "experience"
     },

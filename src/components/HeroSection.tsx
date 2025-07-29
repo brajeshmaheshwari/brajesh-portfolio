@@ -38,25 +38,25 @@ const HeroSection = () => {
             <Button 
               onClick={scrollToContact}
               size="lg" 
-              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[160px]"
             >
               Hire Me
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2"
+              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 flex-1 max-w-[160px]"
               onClick={() => window.open('/resume.pdf', '_blank')}
             >
-              📄 Resume
+              Resume
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2"
+              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 flex-1 max-w-[160px]"
               onClick={() => window.open('https://wa.me/+918302781072', '_blank')}
             >
-              💬 WhatsApp
+              WhatsApp
             </Button>
           </div>
         </div>
