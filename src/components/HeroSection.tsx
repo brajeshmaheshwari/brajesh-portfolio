@@ -22,7 +22,7 @@ const HeroSection = () => {
         // Trigger download
         const link = document.createElement('a');
         link.href = resumePath;
-        link.download = 'Brajesh - Resume.pdf';
+        link.download = 'Brajesh-Resume.pdf';
         link.target = '_blank';
         document.body.appendChild(link);
         link.click();
