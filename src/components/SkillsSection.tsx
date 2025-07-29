@@ -51,19 +51,19 @@ const SkillsSection = () => {
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categories.map((category, index) => (
-               <Card key={category} className="p-8 hover:shadow-2xl transition-all duration-500 hover:scale-[1.05] animate-fade-in group backdrop-blur-sm border-2 hover:border-primary/50 hover:rotate-1" style={{animationDelay: `${index * 150}ms`}}>
-                 <h3 className="text-2xl font-bold mb-8 text-center group-hover:text-primary transition-all duration-300 group-hover:scale-110">{category}</h3>
+               <Card key={category} className="p-8 hover:shadow-2xl transition-all duration-500 hover:scale-[1.05] animate-fade-in group backdrop-blur-sm border-2 hover:border-primary/50 hover:rotate-1 animate-float" style={{animationDelay: `${index * 150}ms`}}>
+                 <h3 className="text-2xl font-bold mb-8 text-center group-hover:text-primary transition-all duration-300 group-hover:scale-110 animate-pulse-slow">{category}</h3>
                 <div className="space-y-6">
                   {skills
                     .filter((skill) => skill.category === category)
                     .map((skill, skillIndex) => (
-                       <div key={skill.name} className="space-y-3 group/skill animate-slide-in-right" style={{animationDelay: `${skillIndex * 50}ms`}}>
+                       <div key={skill.name} className="space-y-3 group/skill animate-slide-in-right hover:translate-x-2 transition-transform duration-300" style={{animationDelay: `${skillIndex * 50}ms`}}>
                          <div className="flex justify-between items-center">
-                           <span className="font-semibold group-hover/skill:text-primary transition-all duration-300 group-hover/skill:scale-105">{skill.name}</span>
+                           <span className="font-semibold group-hover/skill:text-primary transition-all duration-300 group-hover/skill:scale-105 animate-bounce-subtle">{skill.name}</span>
                          </div>
-                         <div className="relative">
-                           <Progress value={skill.level} className="h-3 transition-all duration-500 hover:h-4 group-hover/skill:shadow-lg" />
-                           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                         <div className="relative overflow-hidden">
+                           <Progress value={skill.level} className="h-3 transition-all duration-500 hover:h-4 group-hover/skill:shadow-lg animate-progress-fill" />
+                           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 animate-shimmer"></div>
                          </div>
                        </div>
                     ))}

@@ -48,15 +48,15 @@ const HeroSection = () => {
               className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2"
               onClick={() => window.open('/resume.pdf', '_blank')}
             >
-              Resume
+              📄 Resume
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2"
-              onClick={() => window.open('https://wa.me/+919929777749', '_blank')}
+              onClick={() => window.open('https://wa.me/+918302781072', '_blank')}
             >
-              WhatsApp
+              💬 WhatsApp
             </Button>
           </div>
         </div>

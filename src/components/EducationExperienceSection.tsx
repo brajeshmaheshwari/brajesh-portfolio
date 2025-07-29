@@ -5,45 +5,44 @@ import { GraduationCap, Briefcase, Calendar, MapPin } from "lucide-react";
 const EducationExperienceSection = () => {
   const education = [
     {
-      degree: "Bachelor of Computer Science",
-      institution: "University of Technology",
-      location: "New York, NY",
-      period: "2019 - 2023",
-      gpa: "3.8/4.0",
+      degree: "B.Tech. in Information Technology",
+      institution: "Poornima College of Engineering, Jaipur",
+      location: "Jaipur, Rajasthan",
+      period: "2020 - 2024",
+      gpa: "CGPA: 7.73",
       type: "education"
     },
     {
-      degree: "High School Diploma",
-      institution: "Tech High School",
-      location: "New York, NY", 
-      period: "2015 - 2019",
-      gpa: "3.9/4.0",
+      degree: "12th from Kendriya Vidhalaya, Bhilwara",
+      institution: "Kendriya Vidhalaya",
+      location: "Bhilwara, Rajasthan", 
+      period: "2018 - 2020",
+      gpa: "Percentage: 75.6%",
       type: "education"
     }
   ];
 
   const experience = [
     {
-      position: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      location: "San Francisco, CA",
-      period: "2023 - Present",
+      position: "Software Developer",
+      company: "Hornet Dynamics Pvt. Ltd.",
+      location: "Remote",
+      period: "Mar 2024 – Dec 2024",
       responsibilities: [
-        "Lead development of scalable web applications using React and Node.js",
-        "Mentored junior developers and conducted code reviews",
-        "Implemented CI/CD pipelines improving deployment efficiency by 40%"
+        "Delivered 4–5 full stack applications from end to end",
+        "Improved backend efficiency with optimized DB queries and caching"
       ],
       type: "experience"
     },
     {
-      position: "Frontend Developer",
-      company: "Digital Agency",
-      location: "New York, NY",
-      period: "2022 - 2023",
+      position: "Full Stack Developer",
+      company: "Xpertzy",
+      location: "Remote",
+      period: "Apr 2023 – Sep 2023",
       responsibilities: [
-        "Developed responsive web applications using React and TypeScript",
-        "Collaborated with design team to implement pixel-perfect UIs",
-        "Optimized application performance resulting in 25% faster load times"
+        "Led 3-member team, launched 3 products in 2 months",
+        "Fixed 80+ major bugs, improving uptime by 40%",
+        "Remote-first role, self-driven problem solving"
       ],
       type: "experience"
     }
@@ -102,7 +101,7 @@ const EducationExperienceSection = () => {
 
                   {/* Content Card */}
                   <Card 
-                    className={`w-5/12 p-6 hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in group backdrop-blur-sm border-2 hover:border-primary/50 ${
+                    className={`w-5/12 p-6 hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in group backdrop-blur-sm border-2 hover:border-primary/50 rounded-2xl bg-gradient-to-br from-background to-background/80 ${
                       index % 2 === 0 ? 'mr-8' : 'ml-8'
                     }`}
                     style={{animationDelay: `${index * 200}ms`}}
