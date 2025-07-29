@@ -41,17 +41,15 @@ const HeroSection = () => {
               className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[160px]"
             >
               Hire Me
-          const openResume = () => {
-  window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
-};
-
-<Button
-  variant="outline"
-  /* ...other props... */
-  onClick={openResume}
->
-  Resume
-</Button>
+         </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 flex-1 max-w-[160px]"
+              onClick={() => window.open('/Brajesh - resume.pdf', '_blank')}
+            >
+              Resume
+            </Button>
             <Button 
               variant="outline" 
               size="lg" 
