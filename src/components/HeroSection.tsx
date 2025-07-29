@@ -8,6 +8,19 @@ const HeroSection = () => {
     }
   };
 
+  const handleResumeClick = () => {
+    // Open in new tab
+    window.open('/Brajesh - Resume.pdf', '_blank');
+    
+    // Trigger download
+    const link = document.createElement('a');
+    link.href = '/Brajesh - Resume.pdf';
+    link.download = 'Brajesh - Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-16">
       <div className="container mx-auto px-6">
@@ -46,7 +59,7 @@ const HeroSection = () => {
               variant="outline" 
               size="lg" 
               className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 flex-1 max-w-[160px]"
-              onClick={() => window.open('/Brajesh - resume.pdf', '_blank')}
+              onClick={handleResumeClick}
             >
               Resume
             </Button>
