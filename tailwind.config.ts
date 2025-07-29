@@ -122,6 +122,28 @@ export default {
 				'progress-fill': {
 					'0%': { width: '0%' },
 					'100%': { width: '100%' }
+				},
+				'blob': {
+					'0%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					},
+					'33%': {
+						transform: 'translate(30px, -50px) scale(1.1)'
+					},
+					'66%': {
+						transform: 'translate(-20px, 20px) scale(0.9)'
+					},
+					'100%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					}
+				},
+				'slide-in-left': {
+					'0%': { transform: 'translateX(-100%)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-right': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
 				}
 			},
 			animation: {
@@ -134,7 +156,14 @@ export default {
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
 				'shimmer': 'shimmer 2s ease-in-out infinite',
-				'progress-fill': 'progress-fill 1s ease-out'
+				'progress-fill': 'progress-fill 1s ease-out',
+				'blob': 'blob 7s infinite',
+				'slide-in-left': 'slide-in-left 0.6s ease-out',
+				'slide-right': 'slide-right 0.3s ease-out'
+			},
+			animationDelay: {
+				'2000': '2000ms',
+				'4000': '4000ms',
 			}
 		}
 	},

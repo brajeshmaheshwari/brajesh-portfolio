@@ -29,41 +29,57 @@ const SkillsSection = () => {
   const categories = ["Languages", "Frontend", "Backend", "Database", "Tools", "Soft Skills"];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-20 bg-gradient-to-br from-background via-background/95 to-background overflow-hidden relative">
+      {/* Background Animation */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-10 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+        <div className="absolute top-32 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-32 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 mb-8">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-primary font-medium">Skills</span>
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-3 rounded-xl border border-primary/20 mb-10 backdrop-blur-sm shadow-lg hover:scale-105 transition-transform duration-300">
+              <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
+              <span className="text-primary font-bold text-lg">Skills & Abilities</span>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-              My <span className="text-primary">Technical Skills</span>
+            <h2 className="text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-pulse-slow">
+              My <span className="text-primary animate-bounce-subtle">Technical Skills</span>
             </h2>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: "200ms"}}>
               A showcase of my technical expertise and proficiency levels across different technologies and tools.
             </p>
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {categories.map((category, index) => (
-               <Card key={category} className="p-8 hover:shadow-2xl transition-all duration-500 hover:scale-[1.05] animate-fade-in group backdrop-blur-sm border-2 hover:border-primary/50 hover:rotate-1 animate-float" style={{animationDelay: `${index * 150}ms`}}>
-                 <h3 className="text-2xl font-bold mb-8 text-center group-hover:text-primary transition-all duration-300 group-hover:scale-110 animate-pulse-slow">{category}</h3>
-                <div className="space-y-6">
+               <Card 
+                 key={category} 
+                 className="p-10 hover:shadow-2xl transition-all duration-700 hover:scale-110 animate-fade-in group backdrop-blur-lg border-2 hover:border-primary/50 hover:rotate-2 animate-float rounded-3xl bg-gradient-to-br from-card/90 to-card/70 hover:from-card to-card/80 relative overflow-hidden" 
+                 style={{animationDelay: `${index * 200}ms`}}
+               >
+                 {/* Card Background Effect */}
+                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                 
+                 <h3 className="text-3xl font-bold mb-10 text-center group-hover:text-primary transition-all duration-500 group-hover:scale-125 animate-pulse-slow relative z-10 bg-gradient-to-r from-foreground to-primary bg-clip-text">{category}</h3>
+                 
+                <div className="space-y-8 relative z-10">
                   {skills
                     .filter((skill) => skill.category === category)
                     .map((skill, skillIndex) => (
-                       <div key={skill.name} className="space-y-3 group/skill animate-slide-in-right hover:translate-x-2 transition-transform duration-300" style={{animationDelay: `${skillIndex * 50}ms`}}>
+                       <div key={skill.name} className="space-y-4 group/skill animate-slide-in-right hover:translate-x-4 transition-all duration-500 hover:scale-105" style={{animationDelay: `${skillIndex * 100}ms`}}>
                          <div className="flex justify-between items-center">
-                           <span className="font-semibold group-hover/skill:text-primary transition-all duration-300 group-hover/skill:scale-105 animate-bounce-subtle">{skill.name}</span>
+                           <span className="font-bold text-lg group-hover/skill:text-primary transition-all duration-500 group-hover/skill:scale-110 animate-bounce-subtle hover:animate-pulse">{skill.name}</span>
                          </div>
                          <div className="relative overflow-hidden">
-                           <Progress value={skill.level} className="h-3 transition-all duration-500 hover:h-4 group-hover/skill:shadow-lg animate-progress-fill" />
-                           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/5 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 animate-shimmer"></div>
+                           <Progress value={skill.level} className="h-4 transition-all duration-700 hover:h-6 group-hover/skill:shadow-2xl animate-progress-fill rounded-full group-hover/skill:animate-pulse" />
+                           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/10 to-primary/30 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-500 animate-shimmer"></div>
+                           <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent w-8 animate-slide-right opacity-0 group-hover/skill:opacity-100"></div>
                          </div>
                        </div>
                     ))}

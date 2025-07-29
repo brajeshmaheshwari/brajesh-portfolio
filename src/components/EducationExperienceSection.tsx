@@ -55,109 +55,138 @@ const EducationExperienceSection = () => {
   });
 
   return (
-    <section id="education-experience" className="py-20">
+    <section id="education-experience" className="py-20 bg-gradient-to-br from-background to-background/90">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-primary/10 px-4 py-2 rounded-lg border border-primary/20 mb-8">
-              <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span className="text-primary font-medium">Journey</span>
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-3 rounded-xl border border-primary/20 mb-10 backdrop-blur-sm shadow-lg">
+              <div className="w-3 h-3 bg-primary rounded-full animate-ping"></div>
+              <span className="text-primary font-bold text-lg">My Journey</span>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
               Education & <span className="text-primary">Experience</span>
             </h2>
             
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               My academic background and professional journey in software development.
             </p>
           </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary/50 to-primary/20 rounded-full"></div>
-            
-            {/* Timeline Items */}
-            <div className="space-y-12">
-              {allItems.map((item, index) => (
-                <div 
-                  key={index}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'justify-start' : 'justify-end'
-                  }`}
-                >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="w-6 h-6 bg-primary rounded-full border-4 border-background shadow-lg flex items-center justify-center">
-                      {item.type === 'education' ? (
-                        <GraduationCap className="w-3 h-3 text-background" />
-                      ) : (
-                        <Briefcase className="w-3 h-3 text-background" />
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Content Card */}
+          {/* Experience and Education Grid */}
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Experience Section */}
+            <div className="space-y-8">
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+                  <Briefcase className="w-8 h-8" />
+                  Experience
+                </h3>
+                <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="space-y-6">
+                {experience.map((exp, index) => (
                   <Card 
-                    className={`w-5/12 p-6 hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in group backdrop-blur-sm border-2 hover:border-primary/50 rounded-2xl bg-gradient-to-br from-background to-background/80 ${
-                      index % 2 === 0 ? 'mr-8' : 'ml-8'
-                    }`}
-                    style={{animationDelay: `${index * 200}ms`}}
+                    key={index}
+                    className="p-8 hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-slide-in-left group backdrop-blur-sm border-2 hover:border-primary/50 rounded-3xl bg-gradient-to-br from-card/80 to-card/60 hover:rotate-1"
+                    style={{animationDelay: `${index * 300}ms`}}
                   >
-                    <div className="space-y-4">
-                      {/* Badge */}
+                    <div className="space-y-6">
                       <Badge 
-                        variant={item.type === 'education' ? 'secondary' : 'default'}
-                        className="group-hover:scale-105 transition-transform duration-300"
+                        variant="default"
+                        className="group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-4 py-2 text-sm font-bold"
                       >
-                        {item.type === 'education' ? 'Education' : 'Experience'}
+                        Experience
                       </Badge>
 
-                      {/* Title */}
-                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
-                        {item.type === 'education' ? (item as any).degree : (item as any).position}
-                      </h3>
+                      <h4 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+                        {exp.position}
+                      </h4>
 
-                      {/* Institution/Company */}
-                      <p className="text-lg font-semibold text-muted-foreground">
-                        {item.type === 'education' ? (item as any).institution : (item as any).company}
+                      <p className="text-xl font-semibold text-muted-foreground">
+                        {exp.company}
                       </p>
 
-                      {/* Period and Location */}
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{item.period}</span>
+                      <div className="flex flex-wrap gap-4 text-base text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-5 h-5 text-primary" />
+                          <span>{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>{item.location}</span>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-5 h-5 text-primary" />
+                          <span>{exp.location}</span>
                         </div>
                       </div>
 
-                      {/* GPA or Responsibilities */}
-                      {item.type === 'education' && (item as any).gpa && (
-                        <p className="text-sm font-medium text-primary">
-                          GPA: {(item as any).gpa}
-                        </p>
-                      )}
-
-                      {item.type === 'experience' && (item as any).responsibilities && (
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          {(item as any).responsibilities.map((resp: string, idx: number) => (
-                            <li key={idx} className="flex items-start gap-2">
-                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                              <span>{resp}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                      <ul className="space-y-3 text-base text-muted-foreground">
+                        {exp.responsibilities.map((resp: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-3 hover:translate-x-2 transition-transform duration-300">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0 animate-pulse"></div>
+                            <span className="leading-relaxed">{resp}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </Card>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            {/* Education Section */}
+            <div className="space-y-8">
+              <div className="text-center mb-10">
+                <h3 className="text-3xl font-bold text-primary mb-4 flex items-center justify-center gap-3">
+                  <GraduationCap className="w-8 h-8" />
+                  Education
+                </h3>
+                <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+              </div>
+              
+              <div className="space-y-6">
+                {education.map((edu, index) => (
+                  <Card 
+                    key={index}
+                    className="p-8 hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-slide-in-right group backdrop-blur-sm border-2 hover:border-primary/50 rounded-3xl bg-gradient-to-br from-card/80 to-card/60 hover:-rotate-1"
+                    style={{animationDelay: `${index * 300 + 150}ms`}}
+                  >
+                    <div className="space-y-6">
+                      <Badge 
+                        variant="secondary"
+                        className="group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-secondary to-secondary/80 px-4 py-2 text-sm font-bold"
+                      >
+                        Education
+                      </Badge>
+
+                      <h4 className="text-2xl font-bold group-hover:text-primary transition-colors duration-300">
+                        {(edu as any).degree}
+                      </h4>
+
+                      <p className="text-xl font-semibold text-muted-foreground">
+                        {(edu as any).institution}
+                      </p>
+
+                      <div className="flex flex-wrap gap-4 text-base text-muted-foreground">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="w-5 h-5 text-primary" />
+                          <span>{edu.period}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-5 h-5 text-primary" />
+                          <span>{edu.location}</span>
+                        </div>
+                      </div>
+
+                      <div className="bg-primary/10 rounded-2xl p-4 border border-primary/20">
+                        <p className="text-lg font-bold text-primary">
+                          {(edu as any).gpa}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </div>
