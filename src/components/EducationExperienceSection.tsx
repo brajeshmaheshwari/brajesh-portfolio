@@ -91,7 +91,7 @@ const EducationExperienceSection = () => {
                 {experience.map((exp, index) => (
                   <Card 
                     key={index}
-                    className="p-8 hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-slide-in-left group backdrop-blur-sm border-2 hover:border-primary/50 rounded-3xl bg-gradient-to-br from-card/80 to-card/60 hover:rotate-1"
+                    className="p-8 h-[500px] flex flex-col hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-slide-in-left group backdrop-blur-sm border-2 hover:border-primary/50 rounded-3xl bg-gradient-to-br from-card/80 to-card/60 hover:rotate-1"
                     style={{animationDelay: `${index * 300}ms`}}
                   >
                     <div className="space-y-6">
@@ -149,7 +149,7 @@ const EducationExperienceSection = () => {
                 {education.map((edu, index) => (
                   <Card 
                     key={index}
-                    className="p-8 hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-slide-in-right group backdrop-blur-sm border-2 hover:border-primary/50 rounded-3xl bg-gradient-to-br from-card/80 to-card/60 hover:-rotate-1"
+                    className="p-8 h-[500px] flex flex-col hover:shadow-2xl transition-all duration-700 hover:scale-105 animate-slide-in-right group backdrop-blur-sm border-2 hover:border-primary/50 rounded-3xl bg-gradient-to-br from-card/80 to-card/60 hover:-rotate-1"
                     style={{animationDelay: `${index * 300 + 150}ms`}}
                   >
                     <div className="space-y-6">
