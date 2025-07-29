@@ -46,7 +46,7 @@ const HeroSection = () => {
               variant="outline" 
               size="lg" 
               className="rounded-xl px-8 py-4 text-base font-medium hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 flex-1 max-w-[160px]"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              onClick={() => window.open('/Brajesh - resume.pdf', '_blank')}
             >
               Resume
             </Button>
