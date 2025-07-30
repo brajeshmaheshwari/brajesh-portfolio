@@ -1,8 +1,8 @@
-# Welcome to your Lovable project
+# Welcome to your Portfolio project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/cbfbc995-0638-459f-9508-f3d22ecb50ac
+**URL**: brajesh-work.vercel.app
 
 ## How can I edit this code?
 
